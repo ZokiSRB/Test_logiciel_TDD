@@ -9,8 +9,7 @@ void test_trois_plus_grand(void) {
 
     CU_ASSERT_EQUAL(resultat[0], 10);
     CU_ASSERT_EQUAL(resultat[1], 9);
-    CU_ASSERT_EQUAL(resultat[2], 8);
-    
+    CU_ASSERT_EQUAL(resultat[2], 8);   
 }
 int main(){
     CU_initialize_registry();
