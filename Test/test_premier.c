@@ -3,12 +3,15 @@
 
 void test_premier(void) {
     int nb_liste[] = {1, 3, 2, 43, 10};
-    premier(nb_liste);
-    CU_ASSERT_EQUAL(nb_liste[0], 0);
-    CU_ASSERT_EQUAL(nb_liste[1], 1);
-    CU_ASSERT_EQUAL(nb_liste[2], 1);
-    CU_ASSERT_EQUAL(nb_liste[3], 1);
-    CU_ASSERT_EQUAL(nb_liste[4], 0);
+    int resultat[5];
+    for (int i = 0; i < 5; i++) {
+        resultat[i] = est_premier(nb_liste[i]);
+    }
+    CU_ASSERT_EQUAL(resultat[0], 0);  
+    CU_ASSERT_EQUAL(resultat[1], 1);  
+    CU_ASSERT_EQUAL(resultat[2], 1);  
+    CU_ASSERT_EQUAL(resultat[3], 1);  
+    CU_ASSERT_EQUAL(resultat[4], 0);  
 
 }
 
