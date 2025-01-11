@@ -8,8 +8,21 @@ void test_est_suite_arithmetique(void) {
     int resultat = est_suite_arithmetique(liste_test, taille);
     int resultat_faux = est_suite_arithmetique(liste_test_faux, taille);
 
+    int liste_test_unique[] = {1};
+    int resultat_unique = est_suite_arithmetique(liste_test_unique, 1);
+    CU_ASSERT_EQUAL(resultat_unique, 1);
+
+    int liste_test_vide[] = {};
+    int resultat_vide = est_suite_arithmetique(liste_test_vide, 0);
+    CU_ASSERT_EQUAL(resultat_vide, 1);
+
+    int liste_test_2[] = {4,3,2,1};
+    int resultat_decroi = est_suite_arithmetique(liste_test_2, 4);
+    CU_ASSERT_EQUAL(resultat_decroi, 1);
+
     CU_ASSERT_EQUAL(resultat, 1);
     CU_ASSERT_EQUAL(resultat_faux, 0);
+
 
 }
 
