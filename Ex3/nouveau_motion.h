@@ -10,4 +10,15 @@
 #define MAX_SURFACE_SIZE 100000
 #define MAX_ROIS_FIRST_PASS 65536
 
+// Structure pour les paramètres de traitement
+typedef struct {
+    int i0, i1, j0, j1;    // Dimensions
+    int sd_threshold;       // Seuil sigma-delta
+    int min_surface;        // Surface minimale
+    int max_surface;        // Surface maximale
+} ProcessingParams;
+
+// Déclaration de la fonction de création des paramètres
+ProcessingParams create_default_params(int i0, int i1, int j0, int j1);
+
 #endif
