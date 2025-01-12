@@ -21,4 +21,24 @@ typedef struct {
 // Déclaration de la fonction de création des paramètres
 ProcessingParams create_default_params(int i0, int i1, int j0, int j1);
 
+// Structure pour les données d'image
+typedef struct {
+    uint8_t **input;        // Image d'entrée
+    uint8_t **binary;       // Résultat binaire
+    uint32_t **labels;      // Étiquettes
+    int width, height;      // Dimensions
+} ImageData;
+
+// Codes d'erreur
+typedef enum {
+    MOTION_OK,
+    MOTION_NULL_INPUT,
+    MOTION_INVALID_PARAMS,
+    MOTION_PROCESSING_ERROR
+} motion_status_t;
+
+// Fonctions principales
+ImageData* create_image_data(int width, int height);
+void free_image_data(ImageData *data);
+motion_status_t process_motion_frame(ImageData *data, ProcessingParams *params);
 #endif
